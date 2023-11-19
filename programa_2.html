@@ -1,0 +1,49 @@
+<!--Define la pizarra en la pantalla 600 de ancho y 400 de altura ----->
+<canvas width="600" height="400"> </canvas> 
+
+<script>
+
+    function dibujarCuadrado(x,y, color) { //se crea una funcion 
+
+        //funcion para conectar las etiquetas html con informacion o acciones en JavaScript
+        var pantalla = document.querySelector("canvas"); //conexion
+
+        //encargado de graficar en la pizzarra 2d ancho y largo. 
+        var pincel = pantalla.getContext("2d"); 
+        
+        pincel.fillStyle = color; //color
+        pincel.fillRect(x,y,50,50);
+        pincel.strokeStyle = "black"; //color del borde
+        pincel.strokeRect(x,y,50,50);//definir borde  
+        
+    }
+
+    /*
+    //Iteracion Condicion:WHILE
+
+        var x = 0;//variable fuera del  WHILE
+
+        while (x < 600) {
+
+           //Se llaman las funciones y se ejecuten en el navegador
+           
+            dibujarCuadrado(x,0, "red"); 
+            dibujarCuadrado(x,50, "yellow"); 
+            dibujarCuadrado(x,100, "green"); 
+
+             x = x + 50; //colocar el incremental
+
+        }
+*/
+
+        //Ejercicio con la Condicional FOR 
+        for (var x = 0; x < 600; x = x + 50) {
+
+            dibujarCuadrado(x,0, "red"); 
+            dibujarCuadrado(x,50, "yellow"); 
+            dibujarCuadrado(x,100, "green"); 
+
+            
+        }
+
+    </script>

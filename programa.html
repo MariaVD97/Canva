@@ -1,0 +1,42 @@
+<canvas width="600" height="400">
+
+
+</canvas>
+
+<script>
+    //funcion para conectar las etiquetas html con informacion o acciones en JavaScript
+     var pantalla = document.querySelector("canvas"); //conexion
+
+     //encargado de graficar en la pizzarra 2d ancho y largo. 
+     var pincel = pantalla.getContext("2d"); 
+
+     //propiedad o caracteristica
+     pincel.fillStyle = "lightgrey"; 
+
+     //funcion fillrect llenar rectangulo 4 parametros 
+     pincel.fillRect(0,0,600,400); //2ºparametros en la posicion 0,0 avanza 600 horizontal y 400 vertical 
+     
+     pincel.fillStyle = "green"; //rectangulo verde
+     pincel.fillRect(0,0,200,400);
+
+     pincel.fillStyle = "red"; //rectangulo rijo
+     pincel.fillRect(400,0,200,400);
+                    //eje X y eje Y
+
+     pincel.fillStyle = "yellow"; //triangulo 
+     //iniciar una ruta o camino siguiendo intrucciones 
+     pincel.beginPath(); 
+     //pincel moverte al centro del la badera
+    pincel.moveTo(300,200)//eje X y eje Y
+    pincel.lineTo(200, 400); //hace lineas
+    pincel.lineTo(400, 400); //hace lineas
+    pincel.fill();//llename con ese grafico del color definido arriba
+
+
+    pincel.fillStyle = "blue"; //circulo 
+    pincel.beginPath(); //iniciar una ruta o camino siguiendo intrucciones
+    pincel.arc(300,200,50,0,2*3.14); //para trazar circunferencias
+    pincel.fill();//llename con ese grafico del color definido arriba
+
+
+</script>

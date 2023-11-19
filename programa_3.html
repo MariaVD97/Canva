@@ -1,0 +1,47 @@
+<!--Define la pizarra en la pantalla 600 de ancho y 400 de altura ----->
+<canvas width="600" height="400"> </canvas> 
+
+<script>
+
+        //funcion para conectar las etiquetas html con informacion o acciones en JavaScript
+        var pantalla = document.querySelector("canvas"); //conexion
+
+        //encargado de graficar en la pizzarra 2d ancho y largo. 
+        var pincel = pantalla.getContext("2d"); 
+        
+        pincel.fillStyle = "grey"; //color
+        pincel.fillRect(0,0,600,400);
+
+
+        function exibirAlerta(evento) {
+
+            var x = evento.pageX - pantalla.offsetLeft; //Posicion de la coordenada al dar click. offsetLeft resta lo que sobra
+            var y = evento.pageY - pantalla.offsetTop; //Posicion de la coordenada al dar click. offsetTop resta lo que esta arriba
+
+            console.log(evento);//parametro que se muestra en la consola con sus respectivas propiedades
+            alert( x + "," + y); //instruccion de alerta y muestra la posicion donde das el click 
+            
+        }
+
+        function dibujarCirculo(evento) {
+
+        var x = evento.pageX - pantalla.offsetLeft; //Posicion de la coordenada al dar click. offsetLeft resta lo que sobra
+        var y = evento.pageY - pantalla.offsetTop; //Posicion de la coordenada al dar click. offsetTop resta lo que esta arriba
+
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log( x + "," + y); //instruccion de alerta y muestra la posicion donde das el click 
+
+        }
+
+    /*llama la variable pantalla y usar la propiedad onclick para al momento de dar click 
+    y mandar la alerta*/
+
+    //pantalla.onclick = exibirAlerta;//aqui no lleva los parentesis la funcion pasa como un parametro
+
+    pantalla.onclick = dibujarCirculo;//funcion dibujar el circulo 
+
+
+    </script>
